@@ -10,6 +10,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.min.js"
         integrity="sha512-T+Pw5KwLzU1wmH5slAFcNK8lstMe+BBEi1qLkM1XIWEPZzcNmuiuUKIdq8ATSUFxx138gAIGsKaq8/ljyElMqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".slide ul").cycle({
+                fx: 'fade',
+                speed: 2000,
+                timeout: 3000,
+            });
+        });
+    </script>
     <style>
         .conteudo {
             width: 900px;
@@ -27,12 +36,23 @@
 
         .slide {
             width: 300px;
-            height: 300px;
+            height: 290px;
             margin-left: 10px;
             margin-top: 10px;
             margin-right: 10px;
-            background-color: #c045;
+            padding: 2px;
+            background-color: white;
             float: left;
+            text-align: center;
+            border: 1px solid #e2e2e2;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .slide ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
 
         .material {
