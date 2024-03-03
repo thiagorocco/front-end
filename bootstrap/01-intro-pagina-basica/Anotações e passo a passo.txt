@@ -1,0 +1,69 @@
+*** Projeto básico ***
+    
+    1. Crie um arquivo html5 com a estrutura básica com o nome index.html.
+
+    2. Copie o cdn do bootstrap para esse arquivo. 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    3. Baixa o arquivo de assets e extraia a pasta de assets para o seu projeto.
+
+    4. Criando o headere. Dentro do body insira as seguintes tags e conteúdos:
+
+        <header>
+            <h1>Bootstrap</h1>
+            <p>Este é meu primeiro contato com Bootstrap</p>
+        </header>
+
+    5. Estilizando o header. Defina algumas classes para o header, h1 e p:
+        
+        <header class="container bg-black pt-3 pb-3 text-center">
+            <h1 class="text-secondary">Bootstrap</h1>
+            <p class="text-secondary">Este é meu primeiro contato com Bootstrap</p>
+        </header>
+    
+    6. Navbar. Logo após a tag header adicione esse código:
+    
+    <nav class="container bg-black">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pages</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Infos</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>  
+
+    7. Imagens. Logo após a tag nav, insira o código:
+    
+    <section class="container p-0">
+        <img src="./assets/bg.png" style="width: 100%;">
+    </section>
+
+    Aqui nós tiramos o padding do container para que a imagem ocupe todo o container
+
+    8. Linhas e colunas. Logo após a tag section referente à imagem de background insira esse código:
+    
+    <section class="container p-0">
+        <div class="row">
+            <img src="./assets/html.png" class="col">
+            <img src="./assets/css.png" class="col">
+            <img src="./assets/js.png" class="col">
+        </div>
+    </section>
+
+    9. Rodapé. Logo após a tag section das imagens sequênciais insira esse código:
+
+   <footer class="container bg-black pt-3 pb-3">
+        <div class="row align-items-center">
+            <p class="text-secondary text-center">
+                Todos os direitos reservados
+            </p>
+        </div>
+    </footer>
