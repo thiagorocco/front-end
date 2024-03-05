@@ -1,8 +1,27 @@
-.conteudo{
+.galeria{
     width: 600px;
-    height: 500px;
-    background: #6CC;
+    height: 390px;
+    background: #fff;
     margin: auto;
+    border: solid 1px #333;
+    border-radius: 10px;
+}
+.mini{
+    width: 600px;
+    height: 100px;
+    background: #fff;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 13px;
+    padding-right: 10px;
+}
+.galeria #img_g{
+    border: solid 1px #333;
+    border-radius: 10px;
+}
+.mini .img{
     border: solid 1px #333;
     border-radius: 10px;
 }
