@@ -1,0 +1,8 @@
+.conteudo{
+    width: 600px;
+    height: 500px;
+    background: #6CC;
+    margin: auto;
+    border: solid 1px #333;
+    border-radius: 10px;
+}
