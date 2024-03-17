@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Mensagem Personalizada</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <button onclick="mostrarMensagem()">Mostrar Mensagem</button>
+
+    <script>
+        function mostrarMensagem() {
+            Swal.fire({
+                title: 'Operação realizada com sucesso!',
+                //text: 'Operação realizada com sucesso! SweetAlert!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        }
+    </script>
+</body>
+</html>
