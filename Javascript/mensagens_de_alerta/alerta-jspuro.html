@@ -13,7 +13,8 @@
             transform: translate(-50%, -50%);
             background-color: #fff;
             padding: 20px;
-            border: 2px solid #000;
+            border: 1px solid #fff;
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -25,6 +26,17 @@
 
         .custom-alert p {
             margin-bottom: 0;
+        }
+        .custom-alert button{
+            position: relative;
+            top: 10%;
+            left: 40%;
+            margin-top: 20px;
+            background-color: rgb(50,100,200);
+            border: 3px solid rgb(150,150,255);
+            border-radius: 5px;
+            font-size: 20px;
+            color: white;
         }
     </style>
 </head>
@@ -61,6 +73,5 @@
             overlay.parentNode.removeChild(overlay);
         }
     </script>
-    <script type="text/javascript">mostrarMensagem()</script>
 </body>
 </html>
