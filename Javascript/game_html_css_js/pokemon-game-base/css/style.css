@@ -26,6 +26,16 @@ h1{
     font-size: 80px;
 }
 
+.game{
+    background-image: url('../assets/scene.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 1280px;
+    height: 720px;
+    position: relative;
+}
+
 #reset{
     /*display: none;*/
 
