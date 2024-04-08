@@ -13,6 +13,18 @@ body{
     background-color: black;
     position: relative;
 }
+.music-control{
+    width: 50px;
+    top: 48px;
+    right: 48px;
+    cursor: pointer;
+    position: absolute;
+}
+h1{
+    color: white;
+    margin-bottom: 32px;
+    font-size: 80px;
+}
 
 #reset{
     /*display: none;*/
