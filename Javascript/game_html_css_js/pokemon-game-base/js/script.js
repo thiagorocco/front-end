@@ -20,7 +20,20 @@ const zubat = document.querySelector("#zubat")
 body.addEventListener("keydown", (event)=>{
     event.stopPropagation();
     
-    console.log(event.code)
+    switch (event.code) {
+        case "ArrowLeft":
+            ash.src = "../assets/left.png"
+            break;
+        case "ArrowRight":
+            ash.src = "../assets/right.png"
+            break;
+        case "ArrowLeft":
+            ash.src = "../assets/left.png"
+            break;
+        case "ArrowLeft":
+            ash.src = "../assets/left.png"
+            break;
+    }
 });
 
 
