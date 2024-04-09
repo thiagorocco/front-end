@@ -22,16 +22,18 @@ body.addEventListener("keydown", (event)=>{
     
     switch (event.code) {
         case "ArrowLeft":
-            ash.src = "../assets/left.png"
+            ash.src = "assets/left.png"
             break;
         case "ArrowRight":
-            ash.src = "../assets/right.png"
+            ash.src = "assets/right.png"
             break;
-        case "ArrowLeft":
-            ash.src = "../assets/left.png"
+        case "ArrowDown":
+            ash.src = "assets/front.png"
             break;
-        case "ArrowLeft":
-            ash.src = "../assets/left.png"
+        case "ArrowUp":
+            ash.src = "assets/back.png"
+            break;
+        default:
             break;
     }
 });
