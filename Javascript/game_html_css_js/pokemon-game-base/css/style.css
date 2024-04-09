@@ -41,8 +41,32 @@ h1{
     width: 75px;
 }
 
+#ash{
+    right: 2px;
+    z-index: 1;
+}
+
+#zubat{
+    display: none;
+    right: 90px;
+    top: 550px;
+}
+
+#pikachu{
+    display: none;
+    right: 600px;
+    top: 330px;
+}
+
+#charmander{
+    display: none;
+    width: 65px;
+    right: 175px;
+    top: 55px;
+}
+
 #reset{
-    /*display: none;*/
+    display: none;
 
     /* 
         box-model => margin, border, padding, content 
