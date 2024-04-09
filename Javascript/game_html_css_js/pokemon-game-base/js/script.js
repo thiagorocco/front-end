@@ -16,16 +16,33 @@ const charmander = document.querySelector("#charmander")
 const pikachu = document.querySelector("#pikachu")
 const zubat = document.querySelector("#zubat")
 
+function getXPosition(){
+    //Se não retornar nada da conversão retornará 2
+    return parseInt(ash.style.right.split("px")) || 2;
+}
+function getYPosition(){
+    console.log(ash.style.top)
+}
+
+
 // Evento listener(ouvinte que aguarda algo)
 body.addEventListener("keydown", (event)=>{
     event.stopPropagation();
     
     switch (event.code) {
         case "ArrowLeft":
-            ash.src = "assets/left.png"
+            if (getXPosition() < 770){
+                //template string com crase
+                ash.style.right = `${getXPosition() + 8}px`
+                ash.src = "assets/left.png"
+            }
             break;
         case "ArrowRight":
-            ash.src = "assets/right.png"
+            if (getXPosition() > 2){
+                //template string com crase
+                ash.style.right = `${getXPosition() - 8}px`
+                ash.src = "assets/right.png"
+            }
             break;
         case "ArrowDown":
             ash.src = "assets/front.png"
