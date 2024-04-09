@@ -33,17 +33,17 @@ body.addEventListener("keydown", (event)=>{
     
     switch (event.code) {
         case "ArrowLeft":
+            ash.src = "assets/left.png"
             if (getRightPosition() < 770){
                 //template string com crase
                 ash.style.right = `${getRightPosition() + speed}px`
-                ash.src = "assets/left.png"
             }
             break;
         case "ArrowRight":
+            ash.src = "assets/right.png"
             if (getRightPosition() > 2){
                 //template string com crase
                 ash.style.right = `${getRightPosition() - speed}px`
-                ash.src = "assets/right.png"
             }
             break;
         case "ArrowDown":
@@ -53,9 +53,9 @@ body.addEventListener("keydown", (event)=>{
             }
             break;
         case "ArrowUp":
+            ash.src = "assets/back.png"
             if(getTopPosition() > 2){       
                 ash.style.top = `${getTopPosition() - speed}px`
-                ash.src = "assets/back.png"
             }
             break;
         default:
