@@ -47,9 +47,9 @@ body.addEventListener("keydown", (event)=>{
             }
             break;
         case "ArrowDown":
+            ash.src = "assets/front.png"
             if(getTopPosition() < 625){       
                 ash.style.top = `${getTopPosition() + speed}px`
-                ash.src = "assets/front.png"
             }
             break;
         case "ArrowUp":
