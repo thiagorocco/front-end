@@ -12,6 +12,7 @@ body{
     font-family: sans-serif;
     background-color: black;
     position: relative;
+    flex-direction: column;
 }
 .music-control{
     width: 50px;
