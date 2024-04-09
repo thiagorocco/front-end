@@ -16,12 +16,14 @@ const charmander = document.querySelector("#charmander")
 const pikachu = document.querySelector("#pikachu")
 const zubat = document.querySelector("#zubat")
 
-function getXPosition(){
+const speed = 20;
+
+function getRightPosition(){
     //Se não retornar nada da conversão retornará 2
     return parseInt(ash.style.right.split("px")) || 2;
 }
-function getYPosition(){
-    console.log(ash.style.top)
+function getTopPosition(){
+    return parseInt(ash.style.top.split("px")) || 2;
 }
 
 
@@ -31,24 +33,30 @@ body.addEventListener("keydown", (event)=>{
     
     switch (event.code) {
         case "ArrowLeft":
-            if (getXPosition() < 770){
+            if (getRightPosition() < 770){
                 //template string com crase
-                ash.style.right = `${getXPosition() + 8}px`
+                ash.style.right = `${getRightPosition() + speed}px`
                 ash.src = "assets/left.png"
             }
             break;
         case "ArrowRight":
-            if (getXPosition() > 2){
+            if (getRightPosition() > 2){
                 //template string com crase
-                ash.style.right = `${getXPosition() - 8}px`
+                ash.style.right = `${getRightPosition() - speed}px`
                 ash.src = "assets/right.png"
             }
             break;
         case "ArrowDown":
-            ash.src = "assets/front.png"
+            if(getTopPosition() < 625){       
+                ash.style.top = `${getTopPosition() + speed}px`
+                ash.src = "assets/front.png"
+            }
             break;
         case "ArrowUp":
-            ash.src = "assets/back.png"
+            if(getTopPosition() > 2){       
+                ash.style.top = `${getTopPosition() - speed}px`
+                ash.src = "assets/back.png"
+            }
             break;
         default:
             break;
