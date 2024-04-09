@@ -36,6 +36,11 @@ h1{
     position: relative;
 }
 
+.character{
+    position: absolute;
+    width: 75px;
+}
+
 #reset{
     /*display: none;*/
 
