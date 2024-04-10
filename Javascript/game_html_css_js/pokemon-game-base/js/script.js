@@ -41,6 +41,21 @@ function getTopPosition(){
     return parseInt(ash.style.top.split("px")) || 2;
 }
 
+function verifyLookPokemon(){
+    let tp = getTopPosition()
+    let rp = getRightPosition()
+    console.log('TP: '+tp)
+    console.log('RP:'+rp)
+    if (
+        getTopPosition() >= 2 &&
+        getTopPosition() <= 98 &&
+        getRightPosition() >= 130 &&
+        getRightPosition() <= 216
+    ){
+        charmander.style.display = "block";
+        return;
+    }
+}
 
 // Evento listener(ouvinte que aguarda algo)
 body.addEventListener("keydown", (event)=>{
@@ -76,6 +91,9 @@ body.addEventListener("keydown", (event)=>{
         default:
             break;
     }
+
+    verifyLookPokemon()
 });
+
 
 
