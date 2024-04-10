@@ -51,6 +51,11 @@ function verifyLookPokemon(){
         zubat.style.display = "block";
         return;
     }
+
+    if (getTopPosition() >= 266 && getTopPosition() <= 394 && getRightPosition() >= 546 && getRightPosition() <= 650){
+        pikachu.style.display = "block";
+        return;
+    }
 }
 
 // Evento listener(ouvinte que aguarda algo)
