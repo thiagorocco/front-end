@@ -16,6 +16,10 @@ const charmander = document.querySelector("#charmander")
 const pikachu = document.querySelector("#pikachu")
 const zubat = document.querySelector("#zubat")
 
+let findCharmander = false;
+let findPikachu = false;
+let findZubat = false;
+
 const audio = document.querySelector("audio")
 audio.volume = 0.1
 
@@ -41,19 +45,31 @@ function getTopPosition(){
     return parseInt(ash.style.top.split("px")) || 2;
 }
 
-function verifyLookPokemon(){
+function verifyLookPokemon(to){
+
+    const pokemonRightPosition = to === 'ArrowLeft' ? `${getRightPosition() - 64}px` : `${getRightPosition() + 64}px`
+
+    if (findCharmander){
+        const newTopPosition = to = 'ArrowUp' ? `${getTopPosition() + 8}px` : `${getTopPosition() - 8}px`
+        charmander.style.right = pokemonRightPosition
+        charmander.style.top = newTopPosition
+    }
+
     if (getTopPosition() >= 2 && getTopPosition() <= 98 && getRightPosition() >= 130 && getRightPosition() <= 216){
         charmander.style.display = "block";
+        findCharmander = true
         return;
     }
     
     if (getTopPosition() >= 474 && getTopPosition() <= 594 && getRightPosition() >= 42 && getRightPosition() <= 138){
         zubat.style.display = "block";
+        findZubat = true
         return;
     }
-
+    
     if (getTopPosition() >= 266 && getTopPosition() <= 394 && getRightPosition() >= 546 && getRightPosition() <= 650){
         pikachu.style.display = "block";
+        findPikachu = true
         return;
     }
 }
@@ -93,7 +109,7 @@ body.addEventListener("keydown", (event)=>{
             break;
     }
 
-    verifyLookPokemon()
+    verifyLookPokemon(event.code)
 });
 
 
