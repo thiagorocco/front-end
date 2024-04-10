@@ -37,6 +37,30 @@ musicControl.addEventListener("click",(event)=>{
 
 const speed = 20;
 
+function clearCharactersAndFinishGame(){
+    ash.style.display = "none";
+    charmander.style.display = "none";
+    pikachu.style.display = "none";
+    zubat.style.display = "none";
+    reset.style.display = "block";
+    count.textContent = "";
+}
+
+
+/* Configurando Game Over */
+let currentCount = 60;
+const interval = setInterval(()=>{
+    if(currentCount <= 0){    
+        game.style.backgroundImage = "url('./assets/game-over.jpg')";
+        clearCharactersAndFinishGame();
+        clearInterval(interval);
+        return;
+    }
+    currentCount -= 15;
+    count.textContent = currentCount;    
+    
+}, 1000);
+
 function getRightPosition(){
     //Se não retornar nada da conversão retornará 2
     return parseInt(ash.style.right.split("px")) || 2;
