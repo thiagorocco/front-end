@@ -37,6 +37,12 @@ musicControl.addEventListener("click",(event)=>{
 
 const speed = 20;
 
+/* Função reset */
+reset.addEventListener("click",() => {
+    window.location.reload();
+    reset.style.display = "none";
+});
+
 function clearCharactersAndFinishGame(){
     ash.style.display = "none";
     charmander.style.display = "none";
