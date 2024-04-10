@@ -42,17 +42,13 @@ function getTopPosition(){
 }
 
 function verifyLookPokemon(){
-    let tp = getTopPosition()
-    let rp = getRightPosition()
-    console.log('TP: '+tp)
-    console.log('RP:'+rp)
-    if (
-        getTopPosition() >= 2 &&
-        getTopPosition() <= 98 &&
-        getRightPosition() >= 130 &&
-        getRightPosition() <= 216
-    ){
+    if (getTopPosition() >= 2 && getTopPosition() <= 98 && getRightPosition() >= 130 && getRightPosition() <= 216){
         charmander.style.display = "block";
+        return;
+    }
+    
+    if (getTopPosition() >= 474 && getTopPosition() <= 594 && getRightPosition() >= 42 && getRightPosition() <= 138){
+        zubat.style.display = "block";
         return;
     }
 }
