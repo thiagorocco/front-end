@@ -54,6 +54,16 @@ function verifyLookPokemon(to){
         charmander.style.right = pokemonRightPosition
         charmander.style.top = newTopPosition
     }
+    if (findPikachu){
+        const newTopPosition = to = 'ArrowUp' ? `${getTopPosition() + 36}px` : `${getTopPosition() - 36}px`
+        pikachu.style.right = pokemonRightPosition
+        pikachu.style.top = newTopPosition
+    }
+    if (findZubat){
+        const newTopPosition = to = 'ArrowUp' ? `${getTopPosition() + 72}px` : `${getTopPosition() - 72}px`
+        zubat.style.right = pokemonRightPosition
+        zubat.style.top = newTopPosition
+    }
 
     if (getTopPosition() >= 2 && getTopPosition() <= 98 && getRightPosition() >= 130 && getRightPosition() <= 216){
         charmander.style.display = "block";
