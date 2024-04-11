@@ -48,6 +48,7 @@ function clearCharactersAndFinishGame(){
     charmander.style.display = "none";
     pikachu.style.display = "none";
     zubat.style.display = "none";
+
     reset.style.display = "block";
     count.textContent = "";
 }
@@ -55,6 +56,7 @@ function clearCharactersAndFinishGame(){
 
 /* Configurando Game Over */
 let currentCount = 60;
+
 const interval = setInterval(()=>{
     if(currentCount <= 0){    
         game.style.backgroundImage = "url('./assets/game-over.jpg')";
@@ -62,10 +64,26 @@ const interval = setInterval(()=>{
         clearInterval(interval);
         return;
     }
-    currentCount -= 15;
+    currentCount--;
     count.textContent = currentCount;    
     
 }, 1000);
+
+function finishGame(){
+    if (findCharmander && findPikachu && findZubat){
+        clearCharactersAndFinishGame();
+
+        const timeOut = setTimeout(() => {
+            game.style.backgroundImage = "url(assets/winner.jpg)";
+            
+            clearInterval(interval)
+            clearTimeout(timeOut)
+
+            audio.pause();
+        }, 400);
+        return true;
+    }
+}
 
 function getRightPosition(){
     //Se não retornar nada da conversão retornará 2
@@ -76,6 +94,7 @@ function getTopPosition(){
 }
 
 function verifyLookPokemon(to){
+    finishGame();
 
     const pokemonRightPosition = to === 'ArrowLeft' ? `${getRightPosition() - 64}px` : `${getRightPosition() + 64}px`
 
@@ -118,38 +137,41 @@ function verifyLookPokemon(to){
 body.addEventListener("keydown", (event)=>{
     event.stopPropagation();
     
-    switch (event.code) {
-        case "ArrowLeft":
-            ash.src = "assets/left.png"
-            if (getRightPosition() < 770){
-                //template string com crase
-                ash.style.right = `${getRightPosition() + speed}px`
-            }
-            break;
-        case "ArrowRight":
-            ash.src = "assets/right.png"
-            if (getRightPosition() > 2){
-                //template string com crase
-                ash.style.right = `${getRightPosition() - speed}px`
-            }
-            break;
-        case "ArrowDown":
-            ash.src = "assets/front.png"
-            if(getTopPosition() < 625){       
-                ash.style.top = `${getTopPosition() + speed}px`
-            }
-            break;
-        case "ArrowUp":
-            ash.src = "assets/back.png"
-            if(getTopPosition() > 2){       
-                ash.style.top = `${getTopPosition() - speed}px`
-            }
-            break;
-        default:
-            break;
+    if (!finishGame()){
+        switch (event.code) {
+            case "ArrowLeft":
+                ash.src = "assets/left.png"
+                if (getRightPosition() < 770){
+                    //template string com crase
+                    ash.style.right = `${getRightPosition() + speed}px`
+                }
+                break;
+            case "ArrowRight":
+                ash.src = "assets/right.png"
+                if (getRightPosition() > 2){
+                    //template string com crase
+                    ash.style.right = `${getRightPosition() - speed}px`
+                }
+                break;
+            case "ArrowDown":
+                ash.src = "assets/front.png"
+                if(getTopPosition() < 625){       
+                    ash.style.top = `${getTopPosition() + speed}px`
+                }
+                break;
+            case "ArrowUp":
+                ash.src = "assets/back.png"
+                if(getTopPosition() > 2){       
+                    ash.style.top = `${getTopPosition() - speed}px`
+                }
+                break;
+            default:
+                break;
+        }
+
+        verifyLookPokemon(event.code)
     }
 
-    verifyLookPokemon(event.code)
 });
 
 
